@@ -23,6 +23,7 @@
         <module>elide-example</module>
         <module>elide-contrib</module>
         <module>elide-standalone</module>
+        <module>diffblue-jacoco-report</module>
     </modules>
 
     <issueManagement>
@@ -415,6 +416,23 @@
                     </execution>
                 </executions>
             </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <aggregate>true</aggregate>
+          <showSuccess>true</showSuccess>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>report-only</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
         </plugins>
         <extensions>
             <extension>
